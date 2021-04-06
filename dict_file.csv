@@ -1,0 +1,6 @@
+Upload Row,C:\Users\kangyu\Desktop\FYP\test - Copy.csv
+ADF Significant,1%
+Johansen Significant,1%
+cmi_estimator,JidtKraskovCMI
+max_lag_sources,5
+min_lag_sources,1

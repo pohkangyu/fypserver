@@ -57,12 +57,12 @@ class StationaryTestModule():
         if len(self.rejected) == 0:
             text = "Pass on the basis that all columns are stationary"
             print(text)
-            return True, text + "\n\n" + self.text
+            return "pass", text + "\n\n" + self.text
         elif (self.runCointegrationJohansen(johansenSignificant)):
             text = "Pass on the basis that system are co-integrated, columns that are not stationary includes: " + str(self.rejected)
             print(text)
-            return True, text + "\n\n" + self.text
+            return "pass", text + "\n\n" + self.text
         else:
             text = "Fail, system is not co-integrated and columns: " + str(self.rejected) + " are not stationary"
             print(text)
-            return False, text + "\n\n" + self.text
+            return "fail", text + "\n\n" + self.text
