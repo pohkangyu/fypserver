@@ -174,5 +174,5 @@ def generateResponse(res):
     response.headers.add("Access-Control-Allow-Methods", "*")
     return response
 
-if __name__ == "__main__":
-    app.run()
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
