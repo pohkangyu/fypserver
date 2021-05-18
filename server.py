@@ -13,9 +13,6 @@ app = Flask('your_flask_env')
 dataframe = None
 toggledDifference = 0
 
-dataframe = pd.read_csv("C:\\Users\\kangyu\\Desktop\\FYP\\stock.csv")
-
-
 @app.route('/get_image')
 def get_image():
     if request.args.get('type') == '1':
