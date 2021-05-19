@@ -19,8 +19,6 @@ def get_image():
        filename = 'test.png'
     else:
        filename = 'test.png'
-    print(filename)
-    print("###############################################################")
     response = send_file(filename, mimetype='image/png')
     response.headers.add("Access-Control-Allow-Origin", "*")
     response.headers.add("Access-Control-Allow-Headers", "*")
@@ -37,7 +35,7 @@ def runTE():
 
             inputTE = json.loads(request.form['inputTE'])
             inputTE = {k: v for k, v in inputTE.items() if len(v) > 0}
-            
+
             for key, value in inputTE.items():
                 try:
                     inputTE[key] = int(value)

@@ -17,7 +17,6 @@ RUN set -e; \
     rm -rf /var/tmp/* /tmp/* /var/lib/apt/lists/*
 
 WORKDIR /app
-RUN git clone https://github.com/pohkangyu/fypserver
 RUN pip3 install git+https://github.com/pwollstadt/IDTxl.git
 RUN pip3 install flask==2.0.0
 RUN pip3 install pandas==1.1.4
@@ -28,8 +27,10 @@ RUN pip3 install matplotlib==3.4.2
 RUN pip3 install JPype1==1.2.1
 
 EXPOSE 5000
-ENTRYPOINT ["python3"]
-CMD ["/app/fypserver/server.py"]
+
+WORKDIR /fypserver
+ADD . /fypserver
+CMD ["python", "server.py"]
 
 #docker system prune -a
 #docker build --tag python-docker .
